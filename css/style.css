@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #eee;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Cho phép các sự kiện chuột xuyên qua lớp phủ */
+}
+
+.ui-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    pointer-events: auto; /* Kích hoạt lại sự kiện chuột cho panel */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.ui-panel h1, .ui-panel h2 {
+    color: #00ffff;
+}
+
+.ui-panel button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.ui-panel button:hover {
+    background-color: #0056b3;
+}
+
+#game-ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    pointer-events: auto;
+}
+
+#score-display p {
+    margin: 5px 0;
+}
+
+#power-slider-container {
+    margin-top: 10px;
+}
+
+#power-slider {
+    width: 150px;
+    margin-right: 10px;
+}
+
+#hit-button {
+    display: inline-block;
+    width: auto;
+    padding: 5px 15px;
+    margin: 0;
+}
+
+#message-display {
+    color: yellow;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#reset-button, #main-menu-button {
+    margin-top: 15px;
+    width: auto;
+    padding: 8px 15px;
+    background-color: #dc3545;
+}
+
+#reset-button:hover, #main-menu-button:hover {
+    background-color: #c82333;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.8em;
+    z-index: 100; /* Đảm bảo footer hiển thị trên mọi thứ */
+}
+
+/* Tối ưu cho điện thoại */
+@media (max-width: 768px) {
+    .ui-panel button {
+        width: 80%;
+        font-size: 0.9em;
+    }
+
+    #game-ui {
+        top: 5px;
+        left: 5px;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    #power-slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #power-slider {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #hit-button {
+        width: 100%;
+    }
+}
